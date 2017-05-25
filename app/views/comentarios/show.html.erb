@@ -1,0 +1,15 @@
+<div class="container">
+<h2 class="jumbotron"><span class="glyphicon glyphicon-search"></span>&nbsp;&nbsp;Mostrar Comentario</h2>
+<div class="list-group" style="width:70%; margin: 0px auto;">
+<p class="list-group-item">ID: <%= @comentario.id %></p>
+<p class="list-group-item">name: <%= @comentario.name %></p>
+<p class="list-group-item">star: <%= @comentario.star %></p>
+<p class="list-group-item">main_actor: <%= @comentario.main_actor %></p>
+<p class="list-group-item">year: <%= @comentario.year %></p>
+<br>
+<%= link_to "Back",  comentarios_path, class:"btn btn-md btn-success" %>
+<%= link_to "Delete", comentarios_path(@comentario),
+					  :method => :delete %>
+</div>
+</div>
+ 

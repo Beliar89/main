@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+	resources :peliculas
+	resources :comentarios
   get 'comentarios/index'
 
   get 'peliculas/index'

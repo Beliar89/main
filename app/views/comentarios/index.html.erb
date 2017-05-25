@@ -1,2 +1,17 @@
-<h1>Comentarios#index</h1>
-<p>Find me in app/views/comentarios/index.html.erb</p>
+<div class="container">
+<h2 class="jumbotron"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;Index</h2>
+<div class="list-group" style="width:70%; margin: 0px auto;">
+<h3 class="list-group-item active">Listado de Comentarios</h3>
+<% @comentarios.each do |comentario| %>
+    <br>
+	<p class="list-group-item">ID: <%= comentario.id  %></p>
+	<p class="list-group-item">Name: <%= link_to comentario.name, comentario %></p>
+	<p class="list-group-item">Star: <%= comentario.star %></p>
+	<p class="list-group-item">Main_actor: <%= comentario.main_actor %></p>
+	<p class="list-group-item">Year: <%= comentario.year %></p>
+<% end %>
+<br>
+<p><%=link_to "Añadir comentario", new_comentario_path, class:"btn btn-md btn-success" %></p>
+</div>
+</div>    
+
