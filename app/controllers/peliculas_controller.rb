@@ -22,7 +22,7 @@ class PeliculasController < ApplicationController
 	end
 
 	def edit
-		@pelicula = Pelicula.find(params[:id])
+		@pelicula = Pelicula.find(params[:id]) 
 	end
 
 	def update
