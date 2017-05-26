@@ -1,7 +1,6 @@
 class ComentariosController < ApplicationController
   def index
 		@comentarios = Comentario.all
-		# @peliculas = Pelicula.where[year: 1995] ,where [name: "Heat"]
 	end
 
 	def show
@@ -19,7 +18,7 @@ class ComentariosController < ApplicationController
 		   redirect_to comentarios_path, :notice => "Se ha guardado el comentario!"
 		else
 		end
-			render "new"
+		render "new"
 	end
 
 	def edit
@@ -31,8 +30,8 @@ class ComentariosController < ApplicationController
  		if @comentario.update_attributes(comentario_params)
 			redirect_to comentarios_path, notice: "éxito!"
 		else
-			render "edit"
-	end
+		end
+		render "edit"
 
 	end
 

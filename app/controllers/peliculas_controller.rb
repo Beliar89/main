@@ -18,7 +18,7 @@ class PeliculasController < ApplicationController
 		   redirect_to peliculas_path, :notice => "Se ha guardado la peli!"
 		else
 		end
-			render "new"
+		render "new"
 	end
 
 	def edit
@@ -30,8 +30,8 @@ class PeliculasController < ApplicationController
  		if @pelicula.update_attributes(pelicula_params)
 			redirect_to peliculas_path, notice: "éxito!"
 		else
-			render "edit"
-	end
+	    end
+	    render "edit"
 
 	end
 
@@ -40,6 +40,7 @@ class PeliculasController < ApplicationController
 		@pelicula.destroy
 		redirect_to peliculas_path, :notice => "Borrado"
 	end
+end
 private
 	def pelicula_params
 		params.require(:pelicula).permit(:name, :stars, :main_actor, :year)
