@@ -5,7 +5,7 @@
 <% @peliculas.each do |pelicula| %>
     <br>
 	<p class="list-group-item">ID: <%= pelicula.id  %></p>
-	<p class="list-group-item">Name: <%= link_to peli.name, pelicula %></p>
+	<p class="list-group-item">Name: <%= link_to pelicula.name, pelicula %></p>
 	<p class="list-group-item">Stars: <%= pelicula.stars %></p>
 	<p class="list-group-item">Main_actor: <%= pelicula.main_actor %></p>
 	<p class="list-group-item">Year: <%= pelicula.year %></p>

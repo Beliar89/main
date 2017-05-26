@@ -1,5 +1,6 @@
 class PeliculasController < ApplicationController
-  def index
+ 
+    def index
 		@peliculas = Pelicula.all
 	end
 
@@ -17,8 +18,8 @@ class PeliculasController < ApplicationController
 		if @pelicula.save
 		   redirect_to peliculas_path, :notice => "Se ha guardado la peli!"
 		else
+			render "new"
 		end
-		render "new"
 	end
 
 	def edit
@@ -30,9 +31,8 @@ class PeliculasController < ApplicationController
  		if @pelicula.update_attributes(pelicula_params)
 			redirect_to peliculas_path, notice: "éxito!"
 		else
-	    end
-	    render "edit"
-
+	    	render "edit"
+	    end	
 	end
 
 	def destroy
@@ -40,7 +40,9 @@ class PeliculasController < ApplicationController
 		@pelicula.destroy
 		redirect_to peliculas_path, :notice => "Borrado"
 	end
-end
+ 
+
+
 private
 	def pelicula_params
 		params.require(:pelicula).permit(:name, :stars, :main_actor, :year)
