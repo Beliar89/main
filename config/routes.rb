@@ -5,6 +5,15 @@ Rails.application.routes.draw do
   
   get 'statics/index'
 
+  get 'statics/index'
+
+  get 'statics/about'
+
+	resources :peliculas
+	resources :comentarios
+  get 'comentarios/index'
+
+
   get 'statics/about'
   get '/about' => 'static#about', :as => :about
 	
